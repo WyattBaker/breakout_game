@@ -156,8 +156,8 @@ $(document).click(function() {
 
       if (ball.x < paddle.x + sectionSize) {
         //30 degree angle
-        ball.xVelocity = -totalSpeed*Math.cos(Math.PI/4)
-        ball.yVelocity = -totalSpeed*Math.sin(Math.PI/4)
+        ball.xVelocity = -totalSpeed*Math.cos(Math.PI/6)
+        ball.yVelocity = -totalSpeed*Math.sin(Math.PI/6)
       } else if (ball.x < paddle.x + 2*sectionSize) {
         //45 degree angle
         ball.xVelocity = -totalSpeed*Math.cos(Math.PI/4)
@@ -174,8 +174,8 @@ $(document).click(function() {
         ball.yVelocity = -totalSpeed*Math.sin(Math.PI/4)
       } else if (ball.x < paddle.x + 5*sectionSize) {
         //30 degree angle
-        ball.xVelocity = totalSpeed*Math.cos(Math.PI/4)
-        ball.yVelocity = -totalSpeed*Math.sin(Math.PI/4)
+        ball.xVelocity = totalSpeed*Math.cos(Math.PI/6)
+        ball.yVelocity = -totalSpeed*Math.sin(Math.PI/6)
       }
     }
   }
