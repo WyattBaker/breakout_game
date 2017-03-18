@@ -10,7 +10,7 @@ $(document).click(function() {
     y: canvas.height - 50,
     xVelocity: 3,
     yVelocity: -3,
-    radius: 7
+    radius: 5
   }
 
   var paddle = {
@@ -145,8 +145,8 @@ $(document).click(function() {
     ball.y > paddle.y - ball.radius && ball.y < (paddle.y - ball.radius + paddle.height)) {
       ball.yVelocity = -ball.yVelocity
 
-      //*** SPEED UP HERE
-      //ball.yVelocity = ball.yVelocity - 1
+      //speed the ball up every time it hits the paddle
+      ball.yVelocity = ball.yVelocity - 0.5
 
       sectionSize = paddle.width/5
 
@@ -155,9 +155,9 @@ $(document).click(function() {
       var totalSpeed = Math.sqrt(a + b)
 
       if (ball.x < paddle.x + sectionSize) {
-        //30 degree angle
-        ball.xVelocity = -totalSpeed*Math.cos(Math.PI/6)
-        ball.yVelocity = -totalSpeed*Math.sin(Math.PI/6)
+        //22.5 degree angle
+        ball.xVelocity = -totalSpeed*Math.cos(Math.PI/8)
+        ball.yVelocity = -totalSpeed*Math.sin(Math.PI/8)
       } else if (ball.x < paddle.x + 2*sectionSize) {
         //45 degree angle
         ball.xVelocity = -totalSpeed*Math.cos(Math.PI/4)
@@ -173,9 +173,9 @@ $(document).click(function() {
         ball.xVelocity = totalSpeed*Math.cos(Math.PI/4)
         ball.yVelocity = -totalSpeed*Math.sin(Math.PI/4)
       } else if (ball.x < paddle.x + 5*sectionSize) {
-        //30 degree angle
-        ball.xVelocity = totalSpeed*Math.cos(Math.PI/6)
-        ball.yVelocity = -totalSpeed*Math.sin(Math.PI/6)
+        //22.5 degree angle
+        ball.xVelocity = totalSpeed*Math.cos(Math.PI/8)
+        ball.yVelocity = -totalSpeed*Math.sin(Math.PI/8)
       }
     }
   }
