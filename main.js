@@ -64,8 +64,20 @@ $(window).keyup(function(e) {
 function drawBall() {
   ctx.beginPath()
   ctx.arc(ball.x, ball.y, ball.radius, 0, 2*Math.PI)
-  ctx.fillStyle = "blue"
-  ctx.fill()
+var   x = ball.x,
+      y = ball.y,
+  innerRadius = 1,
+  outerRadius = 15,
+  radius = 9;
+var gradient = ctx.createRadialGradient(x, y, innerRadius, x, y, outerRadius);
+  gradient.addColorStop(0, 'white');
+  gradient.addColorStop(1, 'RGB(148, 152, 161)');
+  ctx.arc(x, y, radius, 0, 2 * Math.PI);
+  ctx.fillStyle = gradient;
+  /**
+    Adapted from http://stackoverflow.com/questions/16494262/how-to-draw-a-circle-with-centered-fadeing-out-gradients-with-html5-canvas
+   */
+  ctx.fill();
   ctx.closePath()
 }
 
